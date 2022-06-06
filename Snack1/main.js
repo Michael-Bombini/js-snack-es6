@@ -5,9 +5,11 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 */
 
-
+//recupero il container dal dom
 const container = document.getElementById("container");
 
+
+//array di objects che rappresenterà ogni bicicletta
 const bici = [
 
     {
@@ -30,7 +32,7 @@ const bici = [
 
 ]
 
-
+//funzione che ci ritornerà il nome e il peso della bici con peso minore
 function getPesoMinore(){
     let {nome , peso} = bici[0];
 
@@ -38,7 +40,7 @@ function getPesoMinore(){
         nome,
         peso,
     }
-
+    
     for(let i = 1 ; i < bici.length ; i++){
         let {nome , peso} = bici[i];
 
@@ -51,10 +53,12 @@ function getPesoMinore(){
     }
 
     console.table(biciPesoMinore);
+    //se non sarà trovata nessuna di minore a quella di indice 0 ritornerò la prima
     return biciPesoMinore;
    
 }
 
+//funzione che stamperà il risultato nell'html
 function stampaBici(){
 
    const {nome , peso} = getPesoMinore();
@@ -64,5 +68,7 @@ function stampaBici(){
 
 
 
+
+//richiamo delle funzioni
 getPesoMinore();
 stampaBici();

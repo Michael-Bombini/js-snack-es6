@@ -9,7 +9,7 @@ Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengo
 */
 
 
-
+//array di object contenente al momento solo le squadre di calcio
 const squadreCalcio = [
     {
         nome : "Juventus",
@@ -31,12 +31,14 @@ const squadreCalcio = [
 console.log("Squadre di calcio")
 console.table(squadreCalcio);
 
+
+//funzione che ci genererà i punti e i falli random (0 - 19)
 function generaRandom(){
    return Math.floor(Math.random() * 20);
    
 }
 
-
+//funzione che inserirà i dati dei punti e dei falli nell'object
 function inserisciDati(){
     for(let i = 0 ; i < squadreCalcio.length ; i++){
         squadreCalcio[i].puntiFatti = generaRandom();
@@ -48,7 +50,7 @@ function inserisciDati(){
 
 inserisciDati();
 
-
+//funzione che creerà il nuovo array contenente soltanto il nome della squadra e i relativi falli
 function creaNuovo(){
 
     const squadreNomiFalli = [];
